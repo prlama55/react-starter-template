@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
-import PageNotFound from './pages/404';
+import PageNotFound from './modules/404';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from "./pages/Home";
+import UserLayout from "./modules/user/UserLayout";
 ReactDOM.render(
   <BrowserRouter>
       <Routes>
           <Route path='/' element={<App/>}>
-              <Route path='/home' element={<Home/>}/>
+              <Route path='/users' element={<UserLayout/>}/>
               <Route path="*" element={<PageNotFound/>} />
           </Route>
       </Routes>
