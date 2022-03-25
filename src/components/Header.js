@@ -1,15 +1,40 @@
-import {Container, Navbar, Nav} from 'react-bootstrap'
+import {Container, NavDropdown, Navbar, Nav, FormControl, Form, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 const Header = ()=>{
     return (
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="/">Logo</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Brand as={Link} to="/">React-Bootstrap</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Link className="nav-link" to="/home">Home</Link>
-                        <Link className="nav-link" to="/page-not-found">Page not found</Link>
+                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
+                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                            <NavDropdown.Item as={Link} to="/action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/action/3.2">Another action</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item as={Link} to="/action/3.4">Separated link</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Form className="d-flex">
+                        <FormControl
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <Button variant="outline-success">Login</Button>
+                    </Form>
+                    <Nav>
+                        <Nav.Link as={Link} to="/deets">Register</Nav.Link>
+                    </Nav>
+                    <Navbar.Text>
+                        Signed in as: <a href="#login">Mark Otto</a>
+                    </Navbar.Text>
+                    <Nav>
+                        <Nav.Link as={Link} to="/deets">Logout</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

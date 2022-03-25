@@ -12,11 +12,7 @@ ReactDOM.render(
       <Routes>
           <Route path='/' element={<App/>}>
               <Route path='/home' element={<Home/>}/>
-              <Route path="*" element={
-                  <main>
-                      <PageNotFound/>
-                  </main>
-              } />
+              <Route path="*" element={<PageNotFound/>} />
           </Route>
       </Routes>
   </BrowserRouter>,
